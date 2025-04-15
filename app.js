@@ -34,7 +34,7 @@ mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
 // middleware mounting
 app.use(
     session({
-        secret: "ajfeirf90aeu9eroejfoefj",
+        secret: "", // input any random string of characters or digits here
         resave: false,
         saveUninitialized: false,
         store: new MongoStore({mongoUrl: 'mongodb://localhost:27017/demos'}),
