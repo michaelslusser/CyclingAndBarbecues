@@ -1,0 +1,51 @@
+<%- include("../partials/header.ejs")%>
+        <main>
+            <!--
+                title of event
+                host of event
+                date/time/location
+                event image
+                details
+                
+                "update" and "delete" buttons link back to connections.html
+            -->
+            <div id="connection-content">
+                <table>
+                    <tr>
+                        <td>
+                            <img id="image" src="<%= connection.url%>" alt="Event image">
+                        </td>
+                        <td>
+                            <h2 id="title"><%= connection.title%></h2>
+                            <p id="event-host">Hosted by <%= connection.host%></p>
+                            <p id="event-date">Starts <%= connection.datetime%></p>
+                            <p id="end-time">Ends <%= connection.endTime%></p>
+                            <p id="event-location">At <%= connection.location%></p>
+                            <h3>Event Details:</h3>
+                            <p id="event-details"><%= connection.details%></p>
+                        </td>
+                        <td>
+                            <%if (user == connection.createdBy) {%>
+                                <form>
+                                    <button type="submit" formmethod="GET" formaction="/connections/<%= connection.id%>/edit">Update</button>
+                                </form>
+                                <form>
+                                    <button type="submit" formmethod="POST" formaction="/connections/<%= connection.id%>?_method=DELETE">Delete</button>
+                                </form>
+                            <%} else if (user) {%>
+                                <p><%= connection.numberGoing%> going</p>
+                                <p>RSVP here:</p>
+                                <form>
+                                    <button type="submit" formmethod="POST" formaction="/connections/<%= connection.id%>/going">Yes</button>
+                                </form>
+                                <form>
+                                    <button type="submit" formmethod="POST" formaction="/connections/<%= connection.id%>/notgoing">No</button>
+                                </form>
+                            <%}%>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+
+        <%- include("../partials/footer.ejs")%>

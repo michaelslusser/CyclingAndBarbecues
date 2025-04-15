@@ -1,0 +1,14 @@
+#connection-content img {
+    padding: 5%;
+    width: 50%;
+    float: right;
+    display: block;
+}
+
+td button {
+    margin: 5%;
+}
+
+td {
+    width: 33%;
+}

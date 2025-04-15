@@ -1,0 +1,88 @@
+<%- include('../partials/header.ejs')%>
+        <main>
+            <div id="profile">
+                <h2>Hello, <%=user.firstName%>!</h2>
+                <%if (events.length) {%>
+                    <p>Here are your events:</p>
+                    <div id="categories">
+                        <h2>Cycling</h2>
+                        <ul class="category">
+                            <% events.forEach(c => {%>
+                                <% if (c.type === "cycling") {%>
+                                    <li class="connection">
+                                        <a href="/connections/<%= c.id%>"><%= c.title%></a>
+                                    </li>
+                                <% }%>
+                            <% });%>
+                        </ul>
+        
+                        <h2>Barbecues</h2>
+                        <ul class="category">
+                            <% events.forEach(b => {%>
+                                <% if (b.type === "barbecues") {%>
+                                    <li class="connection">
+                                        <a href="/connections/<%= b.id%>"><%= b.title%></a>
+                                    </li>
+                                <% }%>
+                            <% });%>
+                        </ul>
+    
+                        <h2>Cycling AND Barbecues</h2>
+                        <ul class="category">
+                            <% events.forEach(cb => {%>
+                                <% if (cb.type === "both") {%>
+                                    <li class="connection">
+                                        <a href="/connections/<%= cb.id%>"><%= cb.title%></a>
+                                    </li>
+                                <% }%>
+                            <% });%>
+                        </ul>
+                    </div>
+                <%} else {%>
+                    <p>You have not created any events.</p>
+                <%}%>
+                <%if (eventsGoing.length) {%>
+                    <p>Here are the events you're going to:</p>
+                    <div id="categories">
+                        <h2>Cycling</h2>
+                        <ul class="category">
+                            <% eventsGoing.forEach(c => {%>
+                                <% if (c.type === "cycling") {%>
+                                    <li class="connection">
+                                        <a href="/connections/<%= c.connection%>"><%= c.title%></a>
+                                    </li>
+                                <% }%>
+                            <% });%>
+                        </ul>
+        
+                        <h2>Barbecues</h2>
+                        <ul class="category">
+                            <% eventsGoing.forEach(b => {%>
+                                <% if (b.type === "barbecues") {%>
+                                    <li class="connection">
+                                        <a href="/connections/<%= b.connection%>"><%= b.title%></a>
+                                    </li>
+                                <% }%>
+                            <% });%>
+                        </ul>
+    
+                        <h2>Cycling AND Barbecues</h2>
+                        <ul class="category">
+                            <% eventsGoing.forEach(cb => {%>
+                                <% if (cb.type === "both") {%>
+                                    <li class="connection">
+                                        <a href="/connections/<%= cb.connection%>"><%= cb.title%></a>
+                                    </li>
+                                <% }%>
+                            <% });%>
+                        </ul>
+                    </div>
+                    <br><br><br><br><br><br><br><br>
+                <%} else {%>
+                    <p>You have not RSVP'd for any events.</p>
+                    <br><br><br><br><br><br><br><br>
+                <%}%>
+            </div>
+        </main>
+
+        <%- include("../partials/footer.ejs")%>

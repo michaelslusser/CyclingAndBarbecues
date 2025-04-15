@@ -1,0 +1,39 @@
+<%- include('../partials/header.ejs')%>
+        <main>
+            <!--
+                register form that takes the following
+                first name
+                last name
+                email
+                password
+            -->
+            <form action="/user" method="POST" name="login" id="login">
+                <table id="form-formatting">
+                    <h2>New User</h2>
+                    <span>* Required</span>
+                    <tbody>
+                        <tr>
+                            <td><label for="firstName">First Name<span>*</span></label></td>
+                            <td><input type="text" name="firstName" id="firstName" required /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="lastName">Last Name<span>*</span></label></td>
+                            <td><input type="text" name="lastName" id="lastName" required /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email<span>*</span></label></td>
+                            <td><input type="email" name="email" id="email" required /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Password<span>*</span></label></td>
+                            <td><input type="password" name="password" id="password" minlength="8" maxlength="64" required /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit" id="submit">Login</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </main>
+
+        <%- include("../partials/footer.ejs")%>

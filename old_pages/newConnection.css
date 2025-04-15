@@ -1,0 +1,30 @@
+td {
+    width: 50%;
+}
+
+#form-formatting input, #form-formatting textarea {
+    width: 400px;
+    padding: 2px;
+    margin: 3px;
+}
+
+#details {
+    height: 100px;
+}
+
+#form-formatting label {
+    float: right;
+}
+
+#form-formatting {
+    padding: 5px 36%;
+    width: max-content;
+}
+
+tbody {
+    width: 400px;
+}
+
+button {
+    margin: 5px 30%;
+}

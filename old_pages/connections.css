@@ -1,0 +1,8 @@
+#categories {
+    padding: 1% 30%;
+}
+
+.category li {
+    display: block;
+    margin: 1% 5%;
+}

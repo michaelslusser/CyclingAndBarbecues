@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Cycling and Barbecues - Connection</title>
+        <link rel="stylesheet" href="connection.css">
+        <link rel="stylesheet" href="header-footer.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- for social media links -->
+
+    </head>
+
+    <body>
+        <header>
+            <!--
+                will need link to connections.html
+                "start a new connection" links to newConnection.html
+                "login" and "sign up" buttons that link to nothing
+                image logo (or possibly text with bike and bbq emoji) links to index.html
+             -->
+             <div id="header">
+                <div id="user-navigation">
+                    <div id="logo">
+                        <h1><a href="index.html"><span class="logo-emoji">&#128690;</span> Cycling and Barbecues <span class="logo-emoji">&#129385;</span></a></h1>
+                    </div>
+                    <ul id="user-navlist">
+                        <li id="connections-nav">
+                            <a href="connections.html">Connections</a>
+                        </li>
+                        <li id="new-connection-nav">
+                            <a href="newConnection.html">Start a New Connection</a>
+                        </li>
+                        <li id="login">
+                            <a href="">Login</a>
+                        </li>
+                        <li id="sign-up">
+                            <a href="">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!--
+                title of event
+                host of event
+                date/time/location
+                event image
+                details
+                
+                "update" and "delete" buttons link back to connections.html
+            -->
+            <div id="connection-content">
+                <table>
+                    <tr>
+                        <td>
+                            <img id="image" src="criticalmass.jpg" alt="Bikes outside of The Common Market, Charlotte NC">
+                        </td>
+                        <td>
+                            <h2 id="title">Critical Mass Charlotte</h2>
+                            <p id="event-host">Charlotte Urbanists and Fixed Federation</p>
+                            <p id="event-date">Friday, September 30, 2022</p>
+                            <p id="event-time">7:00pm</p>
+                            <p id="event-location">1st Ward Park, Charlotte, NC</p>
+                            <h3>Event Details:</h3>
+                            <p id="event-details">All human powered vehicles welcome! A slow-paced ride around 7 miles, guided by local cycling veterans. Come experience cycling the city of Charlotte in a car-free environment</p>
+                        </td>
+                        <td>
+                            <button type="button" onclick="window.location.href='connections.html'">Update</button>
+                            <button type="button" onclick="window.location.href='connections.html'">Delete</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+
+        <footer>
+            <!--
+                copyright cycling and barbecue
+                "about" button and "contact" button that link to nothing
+
+                twitter and facebook buttons that link to nothing
+            -->
+            <div id="footer">
+                <p>&copy; Cycling and Barbecues</p>
+                <a href="">
+                    <p>About</p>
+                </a>
+                <a href="">
+                    <p>Contact</p>
+                </a>
+
+                <!-- social media -->
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+            </div>
+        </footer>
+    </body>
+</html>

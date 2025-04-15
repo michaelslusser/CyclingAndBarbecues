@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Cycling and Barbecues</title>
+        <link rel="stylesheet" href="/css/header-footer.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- for social media links -->
+
+    </head>
+
+    <body>
+        <header>
+            <!--
+                will need link to connections.html
+                "start a new connection" links to newConnection.html
+                "login" and "sign up" buttons that link to nothing
+                image logo (or possibly text with bike and bbq emoji) links to index.html
+            -->
+            <div id="header">
+                <div id="user-navigation">
+                    <div id="logo">
+                        <h1><a href="/"><span class="logo-emoji">&#128690;</span> Cycling and Barbecues <span class="logo-emoji">&#129385;</span></a></h1>
+                    </div>
+                    <ul id="user-navlist">
+                        <li id="connections-nav">
+                            <a href="/connections">Connections</a>
+                        </li>
+                        <li id="new-connection-nav">
+                            <a href="/connections/new">Start a New Connection</a>
+                        </li>
+                        <% if (!user) {%>
+                            <li id="login">
+                                <a href="/user/login">Login</a>
+                            </li>
+                            <li id="sign-up">
+                                <a href="/user/new">Sign Up</a>
+                            </li>
+                        <%} else {%>
+                            <li id="profile">
+                                <a href="/user/profile">Profile</a>
+                            </li>
+                            <li id="sign-out">
+                                <a href="/user/logout">Sign Out</a>
+                            </li>
+                        <%}%>
+                    </ul>
+                </div>
+            </div>
+            <% if(errorMessages.length > 0) {%>
+                <% errorMessages.forEach(message=>{%>
+                    <div class='error'>
+                        <%=message%>
+                    </div>
+                <%});%>
+            <%}%>
+            
+            <% if(successMessages.length > 0) {%>
+                <% successMessages.forEach(message=>{%>
+                    <div class='success'>
+                        <%=message%>
+                    </div>
+                <%});%>
+            <%}%>
+        </header>

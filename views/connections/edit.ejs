@@ -1,0 +1,85 @@
+<%- include("../partials/header.ejs")%>
+        <main>
+            <!--
+                need form to allow users to input the following:
+                topic
+                title
+                host
+                details
+                location
+                date
+                time frame
+                image URL
+                "create connection button" that links to current page
+            -->
+            <form action="/connections/<%= connection.id%>?_method=PUT" method="POST" name="new-connection" id="new-connection">
+                <table id="form-formatting">
+                    <h2>Edit Connection</h2>
+                    <span>* Required</span>
+                    <tbody>
+                        <tr>
+                            <td><label for="type">Type<span>*</span></label></td>
+                            <td><select name="type" id="type" required>
+                                <% if (connection.type === 'cycling') { %>
+                                    <option value="cycling" selected>Cycling</option>
+                                <% } else { %>
+                                    <option value="cycling">Cycling</option>
+                                <%}%>
+                                <% if (connection.type === 'barbecues') { %>
+                                    <option value="barbecues" selected>Barbecues</option>
+                                <% } else { %>
+                                    <option value="barbecues">Barbecues</option>
+                                <%}%>
+                                <% if (connection.type === 'both') { %>
+                                    <option value="both" selected>Both</option>
+                                <% } else { %>
+                                    <option value="both">Both</option>
+                                <%}%>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="title">Title<span>*</span></label></td>
+                            <td><input type="text" name="title" id="title" value="<%= connection.title%>" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="host">Host<span>*</span></label></td>
+                            <td><input type="text" name="host" id="host" value="<%= connection.host%>" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="details">Details<span>*</span></label></td>
+                            <td><textarea name="details" id="details" required><%= connection.details%></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="location">Location<span>*</span></label></td>
+                            <td><input type="text" name="location" id="location" value="<%= connection.location%>" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="startdate">Start Date<span>*</span></label></td>
+                            <td><input type="date" name="startdate" id="sstartdate" value="<%= connection.rawDatetime.startDate%>" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="starttime">Start Time<span>*</span></label></td>
+                            <td><input type="time" name="starttime" id="starttime" value="<%= connection.rawDatetime.startTime%>" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="enddate">End Date<span>*</span></label></td>
+                            <td><input type="date" name="enddate" id="enddate" value="<%= connection.rawDatetime.endDate%>" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="endtime">End Time<span>*</span></label></td>
+                            <td><input type="time" name="endtime" id="endtime" value="<%= connection.rawDatetime.endTime%>" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="url">Image URL<span>*</span></label></td>
+                            <td><input type="text" name="url" id="url" value="<%= connection.url%>" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit" id="submit">Update Connection</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </main>
+
+        <%- include("../partials/footer.ejs")%>

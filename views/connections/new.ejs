@@ -1,0 +1,73 @@
+<%- include("../partials/header.ejs")%>
+        <main>
+            <!--
+                need form to allow users to input the following:
+                topic
+                title
+                host
+                details
+                location
+                date
+                time frame
+                image URL
+                "create connection button" that links to current page
+            -->
+            <form action="/connections" method="POST" name="new-connection" id="new-connection">
+                <table id="form-formatting">
+                    <h2>New Connection</h2>
+                    <span>* Required</span>
+                    <tbody>
+                        <tr>
+                            <td><label for="type">Type<span>*</span></label></td>
+                            <td><select name="type" id="type" required>
+                                <option value="cycling">Cycling</option>
+                                <option value="barbecues">Barbecues</option>
+                                <option value="both">Both</option>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="title">Title<span>*</span></label></td>
+                            <td><input type="text" name="title" id="title" placeholder="Critical Mass Charlotte" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="host">Host<span>*</span></label></td>
+                            <td><input type="text" name="host" id="host" placeholder="Charlotte Urbanists and Fixed Federation" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="details">Details<span>*</span></label></td>
+                            <td><textarea name="details" id="details" required></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="location">Location<span>*</span></label></td>
+                            <td><input type="text" name="location" id="location" placeholder="1st Ward Park, Charlotte, NC" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="startdate">Start Date<span>*</span></label></td>
+                            <td><input type="date" name="startdate" id="sstartdate" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="starttime">Start Time<span>*</span></label></td>
+                            <td><input type="time" name="starttime" id="starttime" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="enddate">End Date<span>*</span></label></td>
+                            <td><input type="date" name="enddate" id="enddate" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="endtime">End Time<span>*</span></label></td>
+                            <td><input type="time" name="endtime" id="endtime" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="url">Image URL<span>*</span></label></td>
+                            <td><input type="text" name="url" id="url" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit" id="submit">Create Connection</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </main>
+
+        <%- include("../partials/footer.ejs")%>

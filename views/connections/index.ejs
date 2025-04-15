@@ -1,0 +1,48 @@
+<%- include("../partials/header.ejs")%>
+        <main>
+            <!--
+                need at least two categories (cycling, barbecue)
+                need at least three connections per category
+                all connections link to connection.html
+            -->
+            <div id="categories">
+                <% if (events.length) {%>
+                    <h2>Cycling</h2>
+                    <ul class="category">
+                        <% events.forEach(c => {%>
+                            <% if (c.type === "cycling") {%>
+                                <li class="connection">
+                                    <a href="/connections/<%= c.id%>"><%= c.title%></a>
+                                </li>
+                            <% }%>
+                        <% });%>
+                    </ul>
+
+                    <h2>Barbecues</h2>
+                    <ul class="category">
+                        <% events.forEach(b => {%>
+                            <% if (b.type === "barbecues") {%>
+                                <li class="connection">
+                                    <a href="/connections/<%= b.id%>"><%= b.title%></a>
+                                </li>
+                            <% }%>
+                        <% });%>
+                    </ul>
+
+                    <h2>Cycling AND Barbecues</h2>
+                    <ul class="category">
+                        <% events.forEach(cb => {%>
+                            <% if (cb.type === "both") {%>
+                                <li class="connection">
+                                    <a href="/connections/<%= cb.id%>"><%= cb.title%></a>
+                                </li>
+                            <% }%>
+                        <% });%>
+                    </ul>
+                <% } else {%>
+                    <p>No events to display.</p>
+                <% }%>
+            </div>
+        </main>
+
+        <%- include("../partials/footer.ejs")%>
